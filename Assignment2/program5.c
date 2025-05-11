@@ -3,7 +3,7 @@
 //    File namev:  program1.c
 //    Description: Accept the number from user and Check for even and Odd
 //    Author :     Mayuresh Kaluskar
-//    Date :       28/04/2025
+//    Date :       11/05/2025
 //
 //////////////////////////////////////////////////////////////////
 
@@ -16,15 +16,26 @@
 typedef int BOOL;
 
 BOOL CheckEvn(int iNo)
-{
+
+{  
+
+  if(iNo == 0 )
+    {
+      printf("Zero is not even nor odd please provide other number") ;
+      return FALSE;
+    }
+
    if((iNo%2)==0 )
    {
-     printf("The given number  %d : is Even", iNo);
+    
+    return TRUE ;
    }
    else
    {
-     printf("The given number  %d : is odd",iNo);
+     return FALSE ;
    }
+
+   
 }
 
 int main()
@@ -35,14 +46,19 @@ int main()
     printf("Enter the number : ");
     scanf("%d",&iValue);
 
-  if(iValue == 0 )
-    {
-      printf("Zero is not even nor odd please provide other number") ;
-      return FALSE;
-    }
+  
    
 
-    CheckEvn(iValue);
+    bRet = CheckEvn(iValue);
+
+    if(bRet == TRUE)
+    {
+      printf("Number is even");
+    }
+    else
+    {
+      printf("Number is odd");
+    }
 
     
 
